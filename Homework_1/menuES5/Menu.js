@@ -21,3 +21,4 @@ Menu.prototype.remove = function () {
     //document
 	var rem = document.getElementById(this.id);
 	rem.parentNode.removeChild(rem); //ES5
+	};
