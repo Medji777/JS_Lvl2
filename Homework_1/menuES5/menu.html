@@ -7,22 +7,38 @@
     <script src="MenuItem.js"></script>
     <script>
         window.onload = function () {
+			//Подпункты меню Услуги
+			var items1 = [
+				new MenuItem('/#', 'Услуга 1'),
+				new MenuItem('/#', 'Услуга 2'),
+				new MenuItem('/#', 'Услуга 3'),
+			];
           //Пункты меню
             var items = [
                 new MenuItem('/', 'Главная'),
                 new MenuItem('/about', 'О нас'),
-                new MenuItem('/service', 'Услуги'),
+				//Создаем объект нового класса, строящего меню с подпунктами
+                new SubMenuItem('my-cont', 'my-cont', items1, 'Услуги', '/service'),
                 new MenuItem('/contacts', 'Контакты'),
             ];
 
             //Само меню
-            var menu = new Menu('my', 'my', items);
+            //var menu = new Menu('my', 'my', items);
 
             //Выбираем контейнер меню
             var menuContainer = document.getElementById('menu1');
 
             //Отображаем на странице html код, который вернул render
-            menuContainer.innerHTML = menu.render();
+            //menuContainer.innerHTML = menu.render();
+			
+			//Выполняеи удаление меню
+			//menuContainer = menu.remove();
+			
+			//Меню с подменю
+			var menu1 = new SubMenuItem('my', 'my', items);
+			
+			//Отображаем на странице html код, который вернул render
+			menuContainer.innerHTML = menu1.render();
         };
     </script>
 </head>
