@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <script src="Menu.js"></script>
+    <script src="MenuItem.js"></script>
+    <script>
+        window.onload = function () {
+          //Пункты меню
+            var items = [
+                new MenuItem('/', 'Главная'),
+                new MenuItem('/about', 'О нас'),
+                new MenuItem('/service', 'Услуги'),
+                new MenuItem('/contacts', 'Контакты'),
+            ];
+
+            //Само меню
+            var menu = new Menu('my', 'my', items);
+
+            //Выбираем контейнер меню
+            var menuContainer = document.getElementById('menu1');
+
+            //Отображаем на странице html код, который вернул render
+            menuContainer.innerHTML = menu.render();
+        };
+    </script>
+</head>
+<body>
+<div id="menu1"></div>
+</body>
+</html>
