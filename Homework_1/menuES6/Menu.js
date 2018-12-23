@@ -22,5 +22,7 @@ class Menu {
     remove()
     {
         //document
+		var rem = document.getElementById(this.id);
+		rem.remove(rem); //ES6
     }
 }
