@@ -23,6 +23,6 @@ class Menu {
     {
         //document
 		var rem = document.getElementById(this.id);
-		rem.remove(rem); //ES6
+		rem.remove(); //ES6
     }
 }
