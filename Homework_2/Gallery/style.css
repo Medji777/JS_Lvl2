@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.gallery a{
+    width: 215px;
+}
+
+.gallery img{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 2px;
+}
