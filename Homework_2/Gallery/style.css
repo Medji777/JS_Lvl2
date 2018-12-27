@@ -1,9 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.gallery{
+.gallery {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -12,11 +12,11 @@
     margin: 0 auto;
 }
 
-.gallery a{
+.gallery a {
     width: 215px;
 }
 
-.gallery img{
+.gallery img {
     width: 100%;
     box-sizing: border-box;
     padding: 5px 2px;

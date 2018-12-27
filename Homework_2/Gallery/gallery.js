@@ -4,18 +4,18 @@ function Gallery(images) {
 }
 
 Gallery.prototype.render = function () {
-    var result = '<div class="'+this.myClass+'">';
+    var result = '<div class="' + this.myClass + '">';
     var res = this.images;
     res.forEach(function (node) {
         console.log(node);
-        if(node instanceof GalleryCreat){
+        if (node instanceof GalleryCreat) {
             result += node.createImage();
         }
     });
 
 
-        result += '</div>';
-        return result;
+    result += '</div>';
+    return result;
 };
 
 function GalleryCreat(minhref, maxhref) {
@@ -28,6 +28,5 @@ GalleryCreat.prototype = Object.create(Gallery.prototype);
 GalleryCreat.prototype.constructor = GalleryCreat;
 
 GalleryCreat.prototype.createImage = function () {
-    return '<a href="'+this.maxhref+'" target="_blank"><img src="'+this.minhref+'"></a>';
+    return '<a href="' + this.maxhref + '" target="_blank"><img src="' + this.minhref + '"></a>';
 };
-

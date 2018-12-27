@@ -12,15 +12,17 @@
         var xhr = new XMLHttpRequest();
         xhr.open('GET', './items.json', true);
         xhr.onreadystatechange = function () {
-            if(xhr.readyState !== 4){return;}
-            if(xhr.status !== 200){
+            if (xhr.readyState !== 4) {
+                return;
+            }
+            if (xhr.status !== 200) {
                 console.log('Error', xhr.status, xhr.statusText)
             } else {
                 console.log('Ok', xhr.responseText);
                 var itemsImg = [];
                 var items = JSON.parse(xhr.responseText);
                 //console.log(items);
-                for(var key in items){
+                for (var key in items) {
                     //console.log(items[key]);
                     //console.log(items[key].minhref, items[key].maxhref);
                     itemsImg.push(new GalleryCreat(items[key].minhref, items[key].maxhref));
@@ -34,6 +36,6 @@
     </script>
 </head>
 <body>
-    <div id="wrapper"></div>
+<div id="wrapper"></div>
 </body>
 </html>
