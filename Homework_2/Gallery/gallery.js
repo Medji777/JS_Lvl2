@@ -28,5 +28,5 @@ GalleryCreat.prototype = Object.create(Gallery.prototype);
 GalleryCreat.prototype.constructor = GalleryCreat;
 
 GalleryCreat.prototype.createImage = function () {
-    return '<a href="' + this.maxhref + '" target="_blank"><img src="' + this.minhref + '"></a>';
+    return '<a href="' + this.maxhref + '" target="_blank"><img src="' + this.minhref + '" alt=""></a>';
 };
