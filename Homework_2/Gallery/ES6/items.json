@@ -1,0 +1,22 @@
+[
+  {
+    "minhref": "/Gallery/images/audi_big.jpg",
+    "maxhref": "/Gallery/images/audi_big.jpg"
+  },
+  {
+    "minhref": "/Gallery/images/vw_big.jpg",
+    "maxhref": "/Gallery/images/vw_big.jpg"
+  },
+  {
+    "minhref": "/Gallery/images/lambo_big.jpg",
+    "maxhref": "/Gallery/images/lambo_big.jpg"
+  },
+  {
+    "minhref": "/Gallery/images/bmw_big.jpg",
+    "maxhref": "/Gallery/images/bmw_big.jpg"
+  },
+  {
+    "minhref": "/Gallery/images/mers_big.jpg",
+    "maxhref": "/Gallery/images/mers_big.jpg"
+  }
+]
