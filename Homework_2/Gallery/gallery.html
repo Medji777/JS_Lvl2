@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="gallery.js"></script>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', './items.json', true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState !== 4) {
+                return;
+            }
+            if (xhr.status !== 200) {
+                console.log('Error', xhr.status, xhr.statusText)
+            } else {
+                console.log('Ok', xhr.responseText);
+                var itemsImg = [];
+                var items = JSON.parse(xhr.responseText);
+                //console.log(items);
+                for (var key in items) {
+                    //console.log(items[key]);
+                    //console.log(items[key].minhref, items[key].maxhref);
+                    itemsImg.push(new GalleryCreat(items[key].minhref, items[key].maxhref));
+                    var item = new Gallery(itemsImg);
+                    console.log(item);
+                }
+                document.getElementById('wrapper').innerHTML = item.render();
+            }
+        };
+        xhr.send();
+    </script>
+</head>
+<body>
+<div id="wrapper" class="wrapper"></div>
+</body>
+</html>
