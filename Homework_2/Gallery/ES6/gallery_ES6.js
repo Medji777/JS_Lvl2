@@ -1,14 +1,13 @@
 class Gallery {
-    constructor(images) {
+    constructor(images){
         this.myClass = 'gallery';
         this.images = images;
     }
 
-    render() {
+    render(){
         var result = `<div class = "${this.myClass}">`;
         var res = this.images;
         res.forEach(function (node) {
-            //console.log(node);
             if (node instanceof GalleryCreat) {
                 result += node.createImage();
             }
@@ -16,18 +15,16 @@ class Gallery {
         result += '</div>';
         return result;
     }
-
 }
 
-class GalleryCreat extends Gallery {
-    constructor(minhref, maxhref) {
+class GalleryCreat extends Gallery{
+    constructor(imghref){
         super();
         this.images = '';
-        this.minhref = minhref;
-        this.maxhref = maxhref;
+        this.imghref = imghref;
     }
 
-    createImage() {
-        return `<a href="${this.maxhref}" class="min-img" target="_blank"><img src="${this.minhref}" alt=""></a>`;
+    createImage(){
+        return `<a class="min-img"><img src="/Gallery/images${this.imghref}" alt=""></a>`;
     }
 }

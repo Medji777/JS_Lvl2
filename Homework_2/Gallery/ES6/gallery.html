@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="gallery.css">
     <script src="gallery_ES6.js"></script>
+    <script src="popup.js"></script>
     <script>
         var xhr = new XMLHttpRequest();
         xhr.open('GET', './items.json', true);
@@ -19,14 +20,29 @@
                 console.log('Error', xhr.status, xhr.statusText)
             } else {
                 console.log('Ok', xhr.responseText);
-                var itemsImg = [];
-                var items = JSON.parse(xhr.responseText);
-                for (var key in items) {
-                    itemsImg.push(new GalleryCreat(items[key].minhref, items[key].maxhref));
+                var itemsImg = [],
+                    itemsImgPopUp = [],
+                    items = JSON.parse(xhr.responseText);
+                for (let i in items) {
+                    itemsImg.push(new GalleryCreat(items[i].imghref));
                     var item = new Gallery(itemsImg);
-                    //console.log(item);
+                    itemsImgPopUp.push(new PopUpCreate(items[i].imghref));
+                    var box = new PopUp(itemsImgPopUp);
                 }
                 document.getElementById('wrapper').innerHTML = item.render();
+                var boxs = document.querySelectorAll('.min-img');
+                boxs.forEach(node => {
+                    node.addEventListener('click', popUp);
+                });
+
+                var arr = document.querySelectorAll('.min-img img');
+                arr.forEach((node, i) => {
+                    node.setAttribute('data-img',i);
+                });
+
+                function popUp(e) {
+                    return document.querySelector('.box').innerHTML = box.render(e);
+                }
             }
         };
         xhr.send();
@@ -34,5 +50,8 @@
 </head>
 <body>
     <div id="wrapper" class="wrapper"></div>
+    <div class="box">
+        <span class="close">X</span>
+    </div>
 </body>
 </html>
