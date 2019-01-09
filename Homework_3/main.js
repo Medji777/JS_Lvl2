@@ -25,7 +25,11 @@ class Form extends Container {
     result(){
         let value = this.text;
         // Первое задание
-        value = value.replace(/'/g, '"');
+        //value = value.replace(/'/g, '"');
+        // Второе задание
+        value = value.replace(/[\s]'/g, ' "');
+        value = value.replace(/'[\s]/g, '" ');
+        value = value.replace(/('(?![\w|\d])|'(?=[\)])|\b'(?=[\s|;])|^'|'$|\b'(?=[\.|\,]))/g,'"');
         return value;
     }
 }
