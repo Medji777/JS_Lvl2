@@ -1,5 +1,5 @@
 [
   {
-    "text": "Like much of JavaScript (regexps and anonymous functions as 1st class elements, closures, 'use strict', flexible classes), JSON, except for replacing Perl's key-value operator '=>' by an RFC 822[120] inspired ':', is syntactically pure Perl."
+    "text": "Like much of JavaScript (regexps and anonymous functions as 1st class elements, closures, flexible classes, 'use strict'), JSON, except for replacing Perl's key-value operator '=>' by an RFC 822[120] inspired ':', is syntactically pure Perl."
   }
 ]
