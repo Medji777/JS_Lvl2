@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+[name='text'], .result > textarea {
+    resize: none;
+    overflow: auto;
+    outline: none;
+}
+
+.form, .format_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form > div {
+    margin: 5px;
+}
+
+.format_form {
+    position: relative;
+    top: 25px;
+}
+
+.result {
+    margin: 0 auto;
+}
+
+.result > textarea {
+    height: 230px;
+    width: 717px;
+}
