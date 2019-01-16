@@ -20,21 +20,29 @@ document.forms.form.addEventListener('input', function (e) {
 });
 
 document.forms.form.addEventListener('submit', function (e) {
-    e.preventDefault();
+	e.preventDefault();
     let onSend = false;
     for (let i in objInput) {
         if(objInput[i].value.trim()){
-
-            objInput[i].value = '';
-            document.forms.form.form_textarea.value = '';
-            objInput[i].style.borderColor = '#ccc';
-            onSend = true;
+			if(objVal.name.test(objInput.inputName.value)){
+			    if(objVal.tel.test(objInput.inputTel.value)){
+					if(objVal.email.test(objInput.inputEmail.value)){
+            			onSend = true;
+					}
+				}
+			   }
         } else {
             objInput[i].style.borderColor = 'red';
+            //e.preventDefault();
             //onSend = false;
         }
     }
     if(onSend === true){
+		for(let i in objInput){
+			objInput[i].value = '';
+            document.forms.form.form_textarea.value = '';
+            objInput[i].style.borderColor = '#ccc';
+		}
         let q = document.querySelector('.form_submit'),
             span = document.createElement('span');
         q.appendChild(span);
@@ -42,7 +50,10 @@ document.forms.form.addEventListener('submit', function (e) {
 
         setTimeout(function () {
             document.querySelector('span').remove();
-        },3000);
+			setTimeout(function(){
+				document.forms.form.submit();
+			});
+        },800);
     }
 });
 
@@ -151,10 +162,37 @@ document.querySelector('.form_button').addEventListener('contextmenu', function 
            console.log('Error', xhr.status, xhr.statusText);
        } else {
            console.log('Ok', xhr.responseText);
-           let dbData = JSON.parse(xhr.responseText),
-               example = new Form('form', 'form', dbData.name, dbData.tel, dbData.email, dbData.text);
-           example.example();
+           let dbData = JSON.parse(xhr.responseText);
+           dbData.forEach(function (node) {
+               let example = new Form('form', 'form', node.name, node.tel, node.email, node.text);
+               example.example();
+           });
        }
    };
    xhr.send();
 });
+//window.onload = function(){
+
+
+let xhr = new XMLHttpRequest();
+xhr.open('GET', 'db_town.json', true);
+xhr.onreadystatechange = function(){
+  if(xhr.readyState !== 4){
+      return;
+  }
+  if(xhr.status !== 200){
+      console.log('Error', xhr.status, xhr.statusText);
+  } else {
+      console.log('Ok', xhr.responseText);
+      let dbData = JSON.parse(xhr.responseText);
+      let town_select = document.querySelector('.select_result');
+      dbData.forEach(function (node) {
+          let town = document.createElement('p');
+          town.setAttribute('class', 'option');
+          town.innerHTML = node.city;
+          town_select.appendChild(town);
+      });
+  }
+};
+xhr.send();
+//};

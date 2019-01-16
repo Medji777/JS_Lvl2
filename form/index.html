@@ -22,18 +22,26 @@
         <div class="cont_input">
 
                 <label for="form_tel">Телефон</label>
-                <input type="tel"  id="form_tel" class="form_element form_tel" placeholder="+7(999)000-0000" >
+                <input type="tel"  id="form_tel" class="form_element form_tel" placeholder="+7(999)000-0000">
 
         </div>
         <div class="cont_input">
 
                 <label for="form_email">Email</label>
-                <input type="email" id="form_email" class="form_element form_email" placeholder="Ваш email" >
+                <input type="email" id="form_email" class="form_element form_email" placeholder="Ваш email">
 
         </div>
         <div class="cont_text">
             <label for="form_textarea"></label>
             <textarea name="" id="form_textarea" cols="30" rows="10" class="form_textarea" placeholder="Введите ваш вопрос"></textarea>
+        </div>
+        <div class="cont_select">
+            <!--<select name="" id="form_select">
+                <option disabled selected>Выберите город</option>
+            </select>-->
+            <input type="text" class="form_select" list="form_select" placeholder="Введите город проживания" autocomplete="off">
+            <datalist id="form_select"></datalist>
+            <div class="select_result"></div>
         </div>
         <div class="form_submit">
             <button type="submit" class="form_button">Отправить</button>

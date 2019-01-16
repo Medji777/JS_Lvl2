@@ -23,6 +23,7 @@
 .form, .cont_text {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .form_element, .form_textarea {
@@ -75,4 +76,26 @@
     justify-content: space-between;
     width: 250px;
     margin: 0 5px 5px 5px;
+}
+
+.select_result {
+    outline: none;
+    border: 1px solid;
+    position: absolute;
+    background: #fff;
+	display: none;
+}
+
+.select_result > .option:hover {
+    background: #ccc;
+    cursor: pointer;
+}
+
+.form_select, .select_result {
+    outline: none;
+    width: 170px;
+}
+
+.form_select::-webkit-calendar-picker-indicator {
+    display: none;
 }
