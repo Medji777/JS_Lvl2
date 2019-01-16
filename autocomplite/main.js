@@ -12,7 +12,6 @@ xhr.onreadystatechange = function(){
 		  input = document.querySelector('.form_select'),
 		  div = document.querySelector('.select_result'),
 		  s = [];
-	  //let ps = document.querySelector('.option_result');
 	  dbData.forEach(function(node){
 		  s.push(node.city);
 	  });
@@ -20,8 +19,7 @@ xhr.onreadystatechange = function(){
 	  input.addEventListener('input', function() {
     	let reg = new RegExp('^' + this.value, 'i');
     	div.innerHTML = '';
-    	div.style.visibility = "hidden";
-		  
+    	div.style.visibility = "hidden"; 
     	if (this.value.length > 2){
     		for (let i = 0; i < s.length; i++) {
     			if (s[i].match(reg)) {
@@ -31,25 +29,22 @@ xhr.onreadystatechange = function(){
 					div.appendChild(p);
 					p.innerHTML += s[i];
     				div.style.visibility = "visible";
+					chek();
         		}
 			}
     	}
 	  }
 	);
-	  //let ps = document.querySelector('.option_result');
-	  div.addEventListener('click', function () {
-		let p = document.querySelectorAll('.select_result .option_result');
-		  p.forEach(function(i){
-			  input.value = i.innerText;
+	  function chek(){
+		  let ps = document.querySelectorAll('.option_result');
+		  ps.forEach(function(n){
+			n.addEventListener('click', function () {
+    			input.value = this.innerText;
+    			div.innerHTML = '';
+    			div.style.visibility = "hidden";
+	  		});
 		  });
-		//let p = document.querySelector('.select_result .option_result');
-		  //p.forEach(function(i){
-			  //input.value = this.innerText;
-		  //});
-    	
-    	div.innerHTML = '';
-    	div.style.visibility = "hidden";
-	  });
+	  }
   }
 };
 xhr.send();
