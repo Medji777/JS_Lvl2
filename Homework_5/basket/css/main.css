@@ -1,0 +1,8 @@
+.good {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid mediumseagreen;
+    display: inline-block;
+    min-width: 300px;
+    border-radius: 3px;
+}
