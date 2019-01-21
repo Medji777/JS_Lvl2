@@ -1,0 +1,21 @@
+{
+  "name": "Homework_6/form",
+  "homepage": "https://github.com/Medji777/JS_Lvl2",
+  "authors": [
+    "Vladimir Dergachev"
+  ],
+  "description": "Vladimir Dergachev > JavaScript 2 > Form create and Form validation",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "^1.12.1"
+  }
+}
