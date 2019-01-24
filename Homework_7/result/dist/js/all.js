@@ -13,7 +13,7 @@ xhr.onreadystatechange = function () {
   } else {
     var chek = function chek() {
       var ps = document.querySelectorAll('.option_result');
-      ps.forEach(function (n) {
+      [].forEach.call(ps, function (n) {
         n.addEventListener('click', function () {
           input.value = this.innerText;
           div.innerHTML = '';

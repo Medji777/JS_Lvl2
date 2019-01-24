@@ -37,13 +37,13 @@ xhr.onreadystatechange = function(){
 	);
 	  function chek(){
 		  let ps = document.querySelectorAll('.option_result');
-		  ps.forEach(function (n){
-			n.addEventListener('click', function () {
-    			input.value = this.innerText;
-    			div.innerHTML = '';
-    			div.style.visibility = "hidden";
-	  		});
-		  });
+          [].forEach.call(ps,function (n){
+              n.addEventListener('click', function () {
+                  input.value = this.innerText;
+                  div.innerHTML = '';
+                  div.style.visibility = "hidden";
+              });
+          });
 	  }
   }
 };
