@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/flick/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="main.js" defer></script>
+    <script src="autocomplite.js" defer></script>
+</head>
+<body>
+<div class="cont_form">
+    <h2 class="name_form">Форма обратной связи</h2>
+    <form id="form" class="form">
+        <div class="cont_input">
+                <label for="form_name">Имя</label>
+                <input type="text" id="form_name" class="form_element form_name" placeholder="Ваше имя">
+        </div>
+        <div class="cont_input">
+                <label for="form_tel">Телефон</label>
+                <input type="tel"  id="form_tel" class="form_element form_tel" placeholder="+7(999)000-0000">
+        </div>
+        <div class="cont_input">
+                <label for="form_email">Email</label>
+                <input type="email" id="form_email" class="form_element form_email" placeholder="Ваш email">
+        </div>
+        <div class="cont_input">
+            <label for="form_bird">Birthday</label>
+            <input type="text" id="form_bird" class="form_element form_bird" placeholder="дд.мм.гггг">
+            <!--<input type="date" id="form_bird" class="form_element form_bird">--> <!--Поле для реализации "Дня рождения" on pure JS-->
+        </div>
+        <div class="cont_text">
+            <label for="form_textarea"></label>
+            <textarea name="" id="form_textarea" cols="30" rows="10" class="form_textarea" placeholder="Введите ваш вопрос"></textarea>
+        </div>
+        <div class="cont_select">
+            <input type="text" id="form_select" class="form_select" placeholder="Введите город проживания" autocomplete="off">
+            <div class="select_result"></div>
+        </div>
+        <div class="form_submit">
+            <button type="submit" class="form_button">Отправить</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

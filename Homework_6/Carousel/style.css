@@ -1,0 +1,68 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+/*Стилизация карусели товаров*/
+.cont-cart {
+	height: 300px;
+	position: relative;
+}
+
+.cart {
+	background: #fff;
+	height: 300px;
+}
+
+.cart-img {
+	height: 60%;
+	background: #ccc;
+}
+
+.cart-desc {
+	height: 25%;
+	background: #ddd;
+}
+
+.cart-btn {
+	height: 15%;
+	background: #cff;
+	cursor: pointer;
+}
+
+.owl-prev {
+	margin-left: 20px;
+}
+
+.owl-next {
+	margin-right: 20px;
+}
+
+.owl-prev, .owl-next {
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	background: rgba(0,0,0,0.1) !important;
+	transition: .3s;
+}
+
+.owl-prev:hover, .owl-next:hover {
+	background: rgba(0,0,0,0.3) !important;
+}
+
+.owl-prev:focus, .owl-next:focus {
+	border-color: none;
+	outline: none;
+}
+
+.owl-nav {
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    top: -55%;
+}
