@@ -1,1 +1,1 @@
-# JS_Lvl2
+# Geekbrains JavaScript Lvl 2
